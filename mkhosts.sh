@@ -20,10 +20,10 @@ read_option() {
   esac
 }
 
-
-printf "Update hosts sources? [Y/n]: "
-update_hosts_sources=$(read_option)
-if "$update_hosts_sources"; then
+UPDATE_SOURCES=${UPDATE_SOURCES:-false}
+$UPDATE_SOURCES || printf "Update hosts sources? [Y/n]: "
+$UPDATE_SOURCES || UPDATE_SOURCES=$(read_option)
+if "$UPDATE_SOURCES"; then
 
   find "$DAT_DIR" "$EXT_DIR" -type f -name 'update.json' | while read -r file; do
     dir="$(dirname "$file")"
@@ -35,9 +35,10 @@ if "$update_hosts_sources"; then
 fi
 
 
-printf "Generate hosts file? [Y/n]: "
-gen_hosts="$(read_option)"
-if "$gen_hosts"; then
+GEN_HOSTS=${GEN_HOSTS:-false}
+$GEN_HOSTS || printf "Generate hosts file? [Y/n]: "
+$GEN_HOSTS || GEN_HOSTS="$(read_option)"
+if "$GEN_HOSTS"; then
 
   find "$DAT_DIR" "$EXT_DIR" -type f -name 'hosts' -exec cat {} \; | # get all hosts file
     # remove all comments and empty lines
