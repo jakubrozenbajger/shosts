@@ -25,18 +25,6 @@ The [/extensions](https://github.com/StevenBlack/hosts/tree/master/extensions) f
 metadata and latest hosts for all our basic hosts sources. The hosts are updated
 automatically by `/updateHostsFile.py` which iterates all the subfolders within `./extensions`.
 
-## Product folders
-
-### Basic hosts
-
-The [basic hosts file](https://github.com/StevenBlack/hosts/blob/master/hosts), containing
-just adware, malware, etc, is stored in the root folder of this repository.
-
-The [/hosts/alternates](https://github.com/StevenBlack/hosts/tree/master/alternates) this folder
-contains the products of `updateHostsFile.py`, one subfolder for each permutation of
-`fakenews`, `gambling`, `porn`, and `social` media hosts, all of which include the base extensions
-containing hosts that block adware, malware, tracking, etc.
-
 ## Other notable files
 
 + [./readme_template.md](https://github.com/StevenBlack/hosts/blob/master/readme_template.md):
